@@ -39,10 +39,10 @@ public class MLBirdAgent : Agent
         if (action == 1)
         {
             rb.GetComponent<FlyBehaviour>().FlyUp();
+            AddReward(0.01f);
         }
         Debug.Log($"Action: {action}");
 
-        AddReward(0.1f);
     }
 
     public override void Heuristic(in ActionBuffers actionsOut)
@@ -53,7 +53,7 @@ public class MLBirdAgent : Agent
 
     public void Die()
     {
-        AddReward(-1f);
+        AddReward(-10f);
         ScoreScript.instance.ResetScore();
         EndEpisode();
     }

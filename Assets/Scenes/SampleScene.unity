@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 857040489}
   - component: {fileID: 857040491}
   - component: {fileID: 857040490}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground (1)
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1612,13 +1612,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199309615}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7030224, w: 0.71116775}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2030756675}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -89.34}
 --- !u!114 &1199309617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1634,15 +1634,16 @@ MonoBehaviour:
   m_SensorName: RayPerceptionSensor
   m_DetectableTags:
   - Wall
-  m_RaysPerDirection: 4
-  m_MaxRayDegrees: 85
-  m_SphereCastRadius: 0.5
-  m_RayLength: 80
+  - Checkpoint
+  m_RaysPerDirection: 16
+  m_MaxRayDegrees: 100
+  m_SphereCastRadius: 0.02
+  m_RayLength: 1.5
   m_RayLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967291
-  m_ObservationStacks: 1
-  m_AlternatingRayOrder: 1
+    m_Bits: 72
+  m_ObservationStacks: 14
+  m_AlternatingRayOrder: 0
   m_UseBatchedRaycasts: 0
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
   rayMissColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1657,7 +1658,8 @@ GameObject:
   - component: {fileID: 1741551147}
   - component: {fileID: 1741551149}
   - component: {fileID: 1741551148}
-  m_Layer: 0
+  - component: {fileID: 1741551150}
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1784,6 +1786,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1741551150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741551146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d7c516b2632064aa1b5e05e8e4aa9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LoopGround
+  _speed: 1
+  _width: 6
 --- !u!1 &1963864077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1920,7 @@ GameObject:
   - component: {fileID: 2030756676}
   - component: {fileID: 2030756678}
   - component: {fileID: 2030756677}
+  - component: {fileID: 2030756679}
   m_Layer: 0
   m_Name: Flappy
   m_TagString: Player
@@ -2065,7 +2082,7 @@ Transform:
   m_GameObject: {fileID: 2030756670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004, y: 0.069, z: 0}
+  m_LocalPosition: {x: -0.283, y: 0.088, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2134,6 +2151,21 @@ MonoBehaviour:
   m_UseChildActuators: 1
   m_DeterministicInference: 0
   m_ObservableAttributeHandling: 0
+--- !u!114 &2030756679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030756670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a5c9d521e5ef4759a8246a07d52221e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.ML-Agents::Unity.MLAgents.DecisionRequester
+  DecisionPeriod: 1
+  DecisionStep: 0
+  TakeActionsBetweenDecisions: 1
 --- !u!1 &2129086433
 GameObject:
   m_ObjectHideFlags: 0

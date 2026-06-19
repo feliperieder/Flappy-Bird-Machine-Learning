@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8400295752167194616}
   - component: {fileID: 1997692798573784633}
   - component: {fileID: 8602708582872063691}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PipeUp
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 70057019002501547}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.845, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -149,7 +149,7 @@ GameObject:
   - component: {fileID: 7936494873258356288}
   - component: {fileID: 2849299488525935804}
   - component: {fileID: 3377925035372707998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PipeDown
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ Transform:
   m_GameObject: {fileID: 6230858027491729869}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.561, z: 0}
+  m_LocalPosition: {x: 0, y: -1.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 2625719259264917431}
   - component: {fileID: 5811482425348024818}
   - component: {fileID: 7623235747155152357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PipePrefab
   m_TagString: Checkpoint
   m_Icon: {fileID: 0}
