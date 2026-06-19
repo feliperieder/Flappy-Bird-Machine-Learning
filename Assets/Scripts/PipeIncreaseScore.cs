@@ -7,6 +7,13 @@ public class PipeIncreaseScore : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             ScoreScript.instance.UpdateScore();
+
+            MLBirdAgent agent = collision.GetComponent<MLBirdAgent>();
+
+            if (agent != null)
+            {
+                agent.PassedPipe();
+            }
         }
     }
 }

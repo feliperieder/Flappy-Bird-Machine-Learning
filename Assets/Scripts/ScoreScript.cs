@@ -38,6 +38,11 @@ public class ScoreScript : MonoBehaviour
         }
     }
 
+    public void ResetScore()
+    {
+        _currentScore = 0;
+        _currentScoreText.text = _currentScore.ToString();
+    }
 
     private void UpdateHighScore()
     {

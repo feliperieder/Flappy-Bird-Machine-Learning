@@ -1,3 +1,4 @@
+using Unity.MLAgents;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,10 +11,13 @@ public class FlyBehaviour : MonoBehaviour
 
     private Rigidbody2D _rb;
 
+    private MLBirdAgent agent;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        agent = GetComponent<MLBirdAgent>();
     }
 
     // Update is called once per frame
@@ -21,9 +25,14 @@ public class FlyBehaviour : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            _rb.linearVelocity = Vector2.up * _velocity;
-            Debug.Log("Flying up");
+            FlyUp();
         }
+    }
+
+    public void FlyUp()
+    {
+        _rb.linearVelocity = Vector2.up * _velocity;
+        Debug.Log("Flying up");
     }
 
     private void FixedUpdate()
@@ -33,6 +42,7 @@ public class FlyBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        GameManager.instance.GameOver();
+        //GameManager.instance.GameOver();
+        agent.Die();
     }
 }
