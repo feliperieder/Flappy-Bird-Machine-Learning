@@ -24,6 +24,19 @@ public class PipeSpawner : MonoBehaviour
             SpawnPipe();
             _timer = 0f;
         }
+
+        for (int i = spawnedPipes.Count - 1; i >= 0; i--)
+        {
+            GameObject pipe = spawnedPipes[i];
+
+            if (pipe == null) continue;
+
+            if (pipe.transform.position.x < -2f)
+            {
+                Destroy(pipe);
+                spawnedPipes.RemoveAt(i);
+            }
+        }
     }
 
     void SpawnPipe()

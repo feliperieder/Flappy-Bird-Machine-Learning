@@ -7,5 +7,6 @@ public class MovePipe : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.left * _initialSpeed * Time.deltaTime;
+        Debug.Log(Time.timeScale);
     }
 }

@@ -53,14 +53,14 @@ public class MLBirdAgent : Agent
 
     public void Die()
     {
-        AddReward(-10f);
+        AddReward(-5f);
         ScoreScript.instance.ResetScore();
         EndEpisode();
     }
 
     public void PassedPipe()
     {
-        AddReward(1f);
+        AddReward(10f);
     }
 
 }
