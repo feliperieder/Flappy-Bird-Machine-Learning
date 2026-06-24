@@ -39,7 +39,7 @@ public class MLBirdAgent : Agent
         if (action == 1)
         {
             rb.GetComponent<FlyBehaviour>().FlyUp();
-            AddReward(0.01f);
+            //AddReward(0.01f);
         }
         Debug.Log($"Action: {action}");
 
