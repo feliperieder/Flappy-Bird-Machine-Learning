@@ -60,16 +60,17 @@ O agente foi treinado utilizando o algoritmo PPO fornecido pelo Unity ML-Agents.
 ## Configuração do Treinamento
 
 O arquivo de configuração do ML-Agents (`FlappyML.yaml`) possui a seguinte estrutura:
+```yaml
 behaviors:
   FlappyBird:
     trainer_type: ppo
 
     hyperparameters:
-      batch_size: 128
-      buffer_size: 2048
-      learning_rate: 1.0e-4
+      batch_size: 256
+      buffer_size: 4096
+      learning_rate: 5.0e-5
       beta: 5.0e-4
-      epsilon: 0.1
+      epsilon: 0.2
       lambd: 0.95
       num_epoch: 3
       learning_rate_schedule: linear
@@ -81,7 +82,7 @@ behaviors:
 
     reward_signals:
       extrinsic:
-        gamma: 0.99
+        gamma: 0.995
         strength: 1.0
 
     max_steps: 2000000
@@ -90,6 +91,7 @@ behaviors:
 
     checkpoint_interval: 50000
     keep_checkpoints: 10
+```
 
 
 ### Configuração do Ambiente Python (Anaconda)
